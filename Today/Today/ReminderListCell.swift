@@ -17,7 +17,7 @@ class ReminderListCell: UITableViewCell {
 
   var doneButtonAction: DoneButtonAction?
 
-  @IBAction func doneButtonTriggered(_ sender: UIButton) {
+  @IBAction func doneButtonTriggered(_ sender: Any) {
     doneButtonAction?()
   }
 }

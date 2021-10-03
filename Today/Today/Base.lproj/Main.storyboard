@@ -7,32 +7,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Reminder List View Controller-->
         <scene sceneID="zmL-9o-Z3j">
             <objects>
-                <tableViewController id="RDO-ze-F6J" sceneMemberID="viewController">
+                <tableViewController id="RDO-ze-F6J" customClass="ReminderListViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="uSH-Fw-n2g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderListCell" rowHeight="80" id="YcW-UH-bjy" userLabel="Reminder List Cell" customClass="ReminderListCell" customModule="Today" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderListCell" rowHeight="99" id="YcW-UH-bjy" userLabel="Reminder List Cell" customClass="ReminderListCell" customModule="Today" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YcW-UH-bjy" id="1FN-Nu-Y1l">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-Q6-hfW">
-                                            <rect key="frame" x="16" y="18" width="44" height="44"/>
+                                            <rect key="frame" x="16" y="28" width="44" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="2p3-Q6-hfW" secondAttribute="height" multiplier="1:1" id="DJh-P0-EO7"/>
                                                 <constraint firstAttribute="width" constant="44" id="rnV-ja-xN7"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain">
-                                                <backgroundConfiguration key="background" image="circle" catalog="system"/>
-                                            </buttonConfiguration>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" backgroundImage="circle" catalog="system"/>
+                                            <connections>
+                                                <action selector="doneButtonTriggered:" destination="YcW-UH-bjy" eventType="touchUpInside" id="XAP-T2-Z9T"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-n6-EAs">
                                             <rect key="frame" x="68" y="16" width="33" height="21"/>
@@ -41,7 +42,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8t-0L-gMf">
-                                            <rect key="frame" x="68" y="45" width="36" height="19"/>
+                                            <rect key="frame" x="68" y="45" width="36" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -61,7 +62,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="o8t-0L-gMf" id="tXC-5Y-ivu"/>
-                                    <outlet property="doneButton" destination="2p3-Q6-hfW" id="e3U-Xb-sQE"/>
+                                    <outlet property="doneButton" destination="2p3-Q6-hfW" id="kfa-H0-Qp2"/>
                                     <outlet property="titleLabel" destination="Phh-n6-EAs" id="pth-k6-UjD"/>
                                 </connections>
                             </tableViewCell>
