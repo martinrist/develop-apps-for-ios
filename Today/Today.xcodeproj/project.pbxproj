@@ -16,6 +16,7 @@
 		2FA5B63A27099452004652A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5B63827099452004652A8 /* LaunchScreen.storyboard */; };
 		2FA5B64227099614004652A8 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5B64127099614004652A8 /* Reminder.swift */; };
 		2FA7B72E2709FAAB00713CA9 /* ReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */; };
+		2FA7B730270A007600713CA9 /* ReminderListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2FA5B63B27099452004652A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FA5B64127099614004652A8 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewController.swift; sourceTree = "<group>"; };
+		2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				2FA5B63B27099452004652A8 /* Info.plist */,
 				2F140E3B2709F2570028A6B1 /* ReminderListCell.swift */,
 				2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */,
+				2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				2FA7B72E2709FAAB00713CA9 /* ReminderDetailViewController.swift in Sources */,
 				2FA5B63027099450004652A8 /* SceneDelegate.swift in Sources */,
 				2FA5B64227099614004652A8 /* Reminder.swift in Sources */,
+				2FA7B730270A007600713CA9 /* ReminderListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
