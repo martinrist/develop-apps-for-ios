@@ -66,20 +66,52 @@
 		2FA5B62C27099450004652A8 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				2FA5B62D27099450004652A8 /* AppDelegate.swift */,
-				2FA5B62F27099450004652A8 /* SceneDelegate.swift */,
-				2FA5B63127099450004652A8 /* ReminderListViewController.swift */,
-				2FA7B731270A01B500713CA9 /* ReminderDetailViewDataSource.swift */,
-				2FA5B63327099450004652A8 /* Main.storyboard */,
-				2FA5B64127099614004652A8 /* Reminder.swift */,
+				2FA7B733270A044A00713CA9 /* Model */,
+				2FA7B734270A045400713CA9 /* VIew */,
+				2FA7B735270A046200713CA9 /* Controller */,
+				2FA7B736270A048700713CA9 /* Support */,
 				2FA5B63627099452004652A8 /* Assets.xcassets */,
 				2FA5B63827099452004652A8 /* LaunchScreen.storyboard */,
 				2FA5B63B27099452004652A8 /* Info.plist */,
-				2F140E3B2709F2570028A6B1 /* ReminderListCell.swift */,
-				2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */,
-				2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		2FA7B733270A044A00713CA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5B64127099614004652A8 /* Reminder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FA7B734270A045400713CA9 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5B63327099450004652A8 /* Main.storyboard */,
+				2F140E3B2709F2570028A6B1 /* ReminderListCell.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		2FA7B735270A046200713CA9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5B63127099450004652A8 /* ReminderListViewController.swift */,
+				2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */,
+				2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */,
+				2FA7B731270A01B500713CA9 /* ReminderDetailViewDataSource.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FA7B736270A048700713CA9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5B62D27099450004652A8 /* AppDelegate.swift */,
+				2FA5B62F27099450004652A8 /* SceneDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
