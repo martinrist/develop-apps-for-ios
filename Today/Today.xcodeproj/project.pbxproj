@@ -21,6 +21,7 @@
 		2FA7B738270A062400713CA9 /* EditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B737270A062400713CA9 /* EditTitleCell.swift */; };
 		2FA7B73A270A065D00713CA9 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B739270A065D00713CA9 /* EditDateCell.swift */; };
 		2FA7B73C270A068700713CA9 /* EditNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B73B270A068700713CA9 /* EditNotesCell.swift */; };
+		2FA7B73E270A080D00713CA9 /* ReminderDetailEditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B73D270A080D00713CA9 /* ReminderDetailEditDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2FA7B737270A062400713CA9 /* EditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleCell.swift; sourceTree = "<group>"; };
 		2FA7B739270A065D00713CA9 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
 		2FA7B73B270A068700713CA9 /* EditNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesCell.swift; sourceTree = "<group>"; };
+		2FA7B73D270A080D00713CA9 /* ReminderDetailEditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailEditDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				2FA7B72F270A007600713CA9 /* ReminderListDataSource.swift */,
 				2FA7B72D2709FAAB00713CA9 /* ReminderDetailViewController.swift */,
 				2FA7B731270A01B500713CA9 /* ReminderDetailViewDataSource.swift */,
+				2FA7B73D270A080D00713CA9 /* ReminderDetailEditDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				2FA7B73A270A065D00713CA9 /* EditDateCell.swift in Sources */,
 				2FA5B64227099614004652A8 /* Reminder.swift in Sources */,
 				2FA7B730270A007600713CA9 /* ReminderListDataSource.swift in Sources */,
+				2FA7B73E270A080D00713CA9 /* ReminderDetailEditDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
