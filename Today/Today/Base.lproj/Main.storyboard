@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="YcW-UH-bjy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderListCell" rowHeight="80" id="YcW-UH-bjy" userLabel="Reminder List Cell" customClass="ReminderListCell" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YcW-UH-bjy" id="1FN-Nu-Y1l">
@@ -59,6 +59,11 @@
                                         <constraint firstItem="Phh-n6-EAs" firstAttribute="leading" secondItem="2p3-Q6-hfW" secondAttribute="trailing" constant="8" symbolic="YES" id="y7O-1J-Pon"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="o8t-0L-gMf" id="tXC-5Y-ivu"/>
+                                    <outlet property="doneButton" destination="2p3-Q6-hfW" id="e3U-Xb-sQE"/>
+                                    <outlet property="titleLabel" destination="Phh-n6-EAs" id="pth-k6-UjD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
