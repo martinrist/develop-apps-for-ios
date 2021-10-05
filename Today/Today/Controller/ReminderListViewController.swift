@@ -12,6 +12,8 @@ class ReminderListViewController: UITableViewController {
   private var reminderListDataSource: ReminderListDataSource?
 
   static let showDetailSegueIdentifier = "ShowReminderDetailSegue"
+  static let mainStoryboardName = "Main"
+  static let detailViewControllerIdentifier = "ReminderDetailViewController"
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,10 +29,6 @@ class ReminderListViewController: UITableViewController {
     }
   }
 
-  @IBAction func addButtonTriggered(_ sender: Any) {
-  }
-  
-
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == Self.showDetailSegueIdentifier,
        let destination = segue.destination as? ReminderDetailViewController,
@@ -40,10 +38,27 @@ class ReminderListViewController: UITableViewController {
       guard let reminder = reminderListDataSource?.reminder(at: rowIndex) else {
         fatalError("Couldn't find data source for reminder list")
       }
-      destination.configure(with: reminder) { reminder in
+      destination.configure(with: reminder, editAction: { reminder in
         self.reminderListDataSource?.update(reminder, at: rowIndex)
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
-      }
+      })
     }
   }
+
+  @IBAction func addButtonTriggered(_ sender: Any) {
+    addReminder()
+  }
+
+  private func addReminder() {
+    let storyboard = UIStoryboard(name: Self.mainStoryboardName, bundle: nil)
+    let detailViewController: ReminderDetailViewController = storyboard.instantiateViewController(identifier: Self.detailViewControllerIdentifier)
+    let reminder = Reminder(title: "New Reminder", dueDate: Date())
+    detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
+
+    })
+
+    let navigationController = UINavigationController(rootViewController: detailViewController)
+    present(navigationController, animated: true, completion: nil)
+  }
+
 }
