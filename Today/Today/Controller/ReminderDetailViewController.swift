@@ -23,6 +23,14 @@ class ReminderDetailViewController: UITableViewController {
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: ReminderDetailEditDataSource.dateLabelCellIdentifier)
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if let navigationController = navigationController,
+       !navigationController.isToolbarHidden {
+      navigationController.setToolbarHidden(true, animated: animated)
+    }
+  }
+
   override func setEditing(_ editing: Bool, animated: Bool) {
     super.setEditing(editing, animated: animated)
     guard let reminder = reminder else {

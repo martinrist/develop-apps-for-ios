@@ -19,6 +19,18 @@ class ReminderListViewController: UITableViewController {
     tableView.dataSource = reminderListDataSource
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if let navigationController = navigationController,
+       navigationController.isToolbarHidden {
+      navigationController.setToolbarHidden(false, animated: animated)
+    }
+  }
+
+  @IBAction func addButtonTriggered(_ sender: Any) {
+  }
+  
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == Self.showDetailSegueIdentifier,
        let destination = segue.destination as? ReminderDetailViewController,
