@@ -60,7 +60,7 @@ extension ReminderListDataSource: UITableViewDataSource {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.reminderListCellIdentifier, for: indexPath) as? ReminderListCell else {
       fatalError("Unable to dequeue ReminderCell)")
     }
-    let reminder = Reminder.testData[indexPath.row]
+    let reminder = filteredReminders[indexPath.row]
     let dateText = reminder.dueDateTimeText(for: filter)
     cell.configure(title: reminder.title,
                    dateText: dateText,
