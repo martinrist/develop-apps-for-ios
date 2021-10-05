@@ -17,6 +17,11 @@ class ReminderListDataSource: NSObject {
   func update(_ reminder: Reminder, at row: Int) {
     Reminder.testData[row] = reminder
   }
+
+  func add(_ reminder: Reminder) {
+    Reminder.testData.insert(reminder, at: 0)
+  }
+
 }
 
 extension ReminderListDataSource: UITableViewDataSource {
