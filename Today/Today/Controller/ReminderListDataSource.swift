@@ -40,11 +40,21 @@ class ReminderListDataSource: NSObject {
   }
 
   func update(_ reminder: Reminder, at row: Int) {
-    Reminder.testData[row] = reminder
+    let index = self.index(for: row)
+    Reminder.testData[index] = reminder
   }
 
-  func add(_ reminder: Reminder) {
+  func add(_ reminder: Reminder) -> Int? {
     Reminder.testData.insert(reminder, at: 0)
+    return filteredReminders.firstIndex(where: { $0.id == reminder.id })
+  }
+
+  func index(for filteredIndex: Int) -> Int {
+    let filteredReminder = filteredReminders[filteredIndex]
+    guard let index = Reminder.testData.firstIndex(where: { $0.id == filteredReminder.id }) else {
+      fatalError("Couldn't retrieve index in source array")
+    }
+    return index
   }
 
 }
