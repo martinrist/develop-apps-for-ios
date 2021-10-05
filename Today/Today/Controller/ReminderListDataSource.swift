@@ -9,6 +9,8 @@ import UIKit
 
 class ReminderListDataSource: NSObject {
 
+  typealias ReminderCompletedAction = (Int) -> Void
+
   enum Filter: Int {
     case today
     case future
@@ -33,6 +35,13 @@ class ReminderListDataSource: NSObject {
     Reminder.testData
       .filter { filter.shouldInclude(date: $0.dueDate) }
       .sorted { $0.dueDate < $1.dueDate }
+  }
+
+  private var reminderCompletedAction: ReminderCompletedAction?
+
+  init(reminderCompletedAction: @escaping ReminderCompletedAction) {
+    self.reminderCompletedAction = reminderCompletedAction
+    super.init()
   }
 
   func delete(at row: Int) {
@@ -90,8 +99,10 @@ extension ReminderListDataSource: UITableViewDataSource {
     cell.configure(title: reminder.title,
                    dateText: dateText,
                    isDone: reminder.isComplete) {
-      Reminder.testData[indexPath.row].isComplete.toggle()
-      tableView.reloadRows(at: [indexPath], with: .none)
+      var modifiedReminder = reminder
+      modifiedReminder.isComplete.toggle()
+      self.update(modifiedReminder, at: indexPath.row)
+      self.reminderCompletedAction?(indexPath.row)
     }
     return cell
   }

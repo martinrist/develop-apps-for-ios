@@ -26,7 +26,10 @@ class ReminderListViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    reminderListDataSource = ReminderListDataSource()
+    reminderListDataSource = ReminderListDataSource { reminderIndex in
+      self.tableView.reloadRows(at: [IndexPath(row: reminderIndex, section: 0)], with: .automatic)
+      self.refreshProgressView()
+    }
     tableView.dataSource = reminderListDataSource
   }
 
