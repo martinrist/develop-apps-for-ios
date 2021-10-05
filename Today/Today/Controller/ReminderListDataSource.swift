@@ -35,6 +35,11 @@ class ReminderListDataSource: NSObject {
       .sorted { $0.dueDate < $1.dueDate }
   }
 
+  func delete(at row: Int) {
+    let index = self.index(for: row)
+    Reminder.testData.remove(at: index)
+  }
+
   func reminder(at row: Int) -> Reminder {
     return filteredReminders[row]
   }
@@ -79,6 +84,19 @@ extension ReminderListDataSource: UITableViewDataSource {
       tableView.reloadRows(at: [indexPath], with: .none)
     }
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    guard editingStyle == .delete else {
+      return
+    }
+    delete(at: indexPath.row)
+    tableView.performBatchUpdates {
+      tableView.deleteRows(at: [indexPath], with: .automatic)
+    } completion: { _ in
+      tableView.reloadData()
+    }
+
   }
 }
 
