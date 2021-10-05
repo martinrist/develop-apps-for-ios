@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA7B733270A044A00713CA9 /* Model */,
-				2FA7B734270A045400713CA9 /* VIew */,
+				2FA7B734270A045400713CA9 /* View */,
 				2FA7B735270A046200713CA9 /* Controller */,
 				2FA7B736270A048700713CA9 /* Support */,
 				2FA5B63627099452004652A8 /* Assets.xcassets */,
@@ -93,7 +93,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2FA7B734270A045400713CA9 /* VIew */ = {
+		2FA7B734270A045400713CA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2FA5B63327099450004652A8 /* Main.storyboard */,
@@ -102,7 +102,7 @@
 				2FA7B739270A065D00713CA9 /* EditDateCell.swift */,
 				2FA7B73B270A068700713CA9 /* EditNotesCell.swift */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 		2FA7B735270A046200713CA9 /* Controller */ = {
