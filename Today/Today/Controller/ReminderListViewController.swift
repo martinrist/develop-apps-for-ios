@@ -29,6 +29,8 @@ class ReminderListViewController: UITableViewController {
     reminderListDataSource = ReminderListDataSource { reminderIndex in
       self.tableView.reloadRows(at: [IndexPath(row: reminderIndex, section: 0)], with: .automatic)
       self.refreshProgressView()
+    } reminderDeletedAction: {
+      self.refreshProgressView()
     }
     tableView.dataSource = reminderListDataSource
   }

@@ -10,6 +10,7 @@ import UIKit
 class ReminderListDataSource: NSObject {
 
   typealias ReminderCompletedAction = (Int) -> Void
+  typealias ReminderDeletedAction = () -> Void
 
   enum Filter: Int {
     case today
@@ -38,9 +39,12 @@ class ReminderListDataSource: NSObject {
   }
 
   private var reminderCompletedAction: ReminderCompletedAction?
+  private var reminderDeletedAction: ReminderDeletedAction?
 
-  init(reminderCompletedAction: @escaping ReminderCompletedAction) {
+  init(reminderCompletedAction: @escaping ReminderCompletedAction,
+       reminderDeletedAction: @escaping ReminderDeletedAction) {
     self.reminderCompletedAction = reminderCompletedAction
+    self.reminderDeletedAction = reminderDeletedAction
     super.init()
   }
 
@@ -117,6 +121,7 @@ extension ReminderListDataSource: UITableViewDataSource {
     } completion: { _ in
       tableView.reloadData()
     }
+    reminderDeletedAction?()
 
   }
 }
